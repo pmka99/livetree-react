@@ -1,0 +1,55 @@
+{
+  "name": "@livetree/react",
+  "version": "0.0.1",
+  "description": "A powerful and synchronized tree component for React with real‑time collaboration support",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/styles/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup && shx mkdir -p dist/styles && shx cp src/styles/style.css dist/styles/",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmka99/livetree-react"
+  },
+  "keywords": [
+    "react",
+    "tree",
+    "component",
+    "typescript",
+    "livetree",
+    "livetree-react"
+  ],
+  "author": "Mohammad Karimi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "shx": "^0.4.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.0.0"
+  }
+}
