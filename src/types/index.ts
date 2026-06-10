@@ -36,12 +36,6 @@ export type NodeRow<T = unknown> = {
 }
 
 
-export type RootProtection = {
-    //  single-root
-    allowRootDeletion?: boolean      // default: false
-    allowRootMove?: boolean          // default: false
-}
-
 export type RootDisplay = {
     mode: 'single-root' | 'multi-root';     // 'single-root' | 'multi-root' 
     showRoot?: boolean;                     // just for single-root

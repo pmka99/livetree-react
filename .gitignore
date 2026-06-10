@@ -25,3 +25,5 @@ desktop.ini
 
 *.tgz
 *.tar.gz
+
+.npmrc
