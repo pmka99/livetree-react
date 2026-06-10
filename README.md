@@ -3,7 +3,6 @@
 ![Bundle Size](https://img.shields.io/bundlephobia/minzip/@livetree/react)
 ![Gzip Size](https://img.shields.io/badge/gzip-5.2_kB-brightgreen)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-success)
-![Compared to rc-tree](https://img.shields.io/badge/compare-5x_smaller_than_rc--tree-blue)
 
 A feature-rich, highly customizable tree component for React with built-in support for collaborative editing, drag & drop, context menus, action buttons, virtual scrolling, RTL, theming, and real‑time synchronization with backend APIs.
 
