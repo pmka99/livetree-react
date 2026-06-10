@@ -1,5 +1,10 @@
 # 🌳 LiveTree – React Tree Component
 
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/@livetree/react)
+![Gzip Size](https://img.shields.io/badge/gzip-5.2_kB-brightgreen)
+![Dependencies](https://img.shields.io/badge/dependencies-0-success)
+![Compared to rc-tree](https://img.shields.io/badge/compare-5x_smaller_than_rc--tree-blue)
+
 A feature-rich, highly customizable tree component for React with built-in support for collaborative editing, drag & drop, context menus, action buttons, virtual scrolling, RTL, theming, and real‑time synchronization with backend APIs.
 
 ## ✨ Features
@@ -114,7 +119,6 @@ const {
   fetchApi,      // (id: string) => Promise<TreeNode<T>>
   fetchRootApi,  // () => Promise<TreeNode<T> | TreeNode<T>[]>
   rootDisplay,   // optional
-  rootProtection,// optional
 });
 ```
 
@@ -125,7 +129,6 @@ const {
 |fetchApi |	(id: string) => Promise<TreeNode<T>> |	Fetch a single node by ID (including its children) |
 |fetchRootApi |	() => Promise<TreeNode<T> TreeNode<T>[]> |	Fetch the root node(s) |
 |rootDisplay |	RootDisplay |	Same as LiveTree prop |
-|rootProtection |	{ allowRootDeletion?, allowRootMove? } |	Prevent root modifications |
 
 
 ### Return Values
@@ -284,6 +287,21 @@ type NodesChangeData<T = unknown> = {
   createdAt?: Date | string;
   extraData?: T;
 };
+```
+
+The full payload sent to `syncNodesWithChange` follows the `NodesChange<T>` interface:
+```typescript
+export interface NodesChange<T = unknown> {
+  operationId?: string;
+  operationType?: string;
+  timestamp?: Date;
+  changes: {
+    created: Array<{ id: string; name: string; data: NodesChangeData<T> }>;
+    updated: Array<{ id: string; name: string; changes?: Record<string, NodesChangeData<T>>; data: NodesChangeData<T> }>;
+    deleted: Array<{ id: string; name: string; data: NodesChangeData<T> }>;
+  };
+  metadata?: any;
+}
 ```
 Example WebSocket message:
 ```json

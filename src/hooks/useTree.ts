@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { NodeRow, RootDisplay, RootProtection, TreeNode } from "../types"
+import { NodeRow, RootDisplay, TreeNode } from "../types"
 import { flattenTree } from "../utils/flattenTree"
 import { useSupportsAdvancedMode } from "./useSupportsAdvancedMode"
 import { syncNodes } from "../syncData/syncNodes"
@@ -9,7 +9,6 @@ type Props<T = unknown> = {
     fetchApi: (id: string) => Promise<TreeNode<T>>;
     fetchRootApi: () => Promise<TreeNode<T> | TreeNode<T>[]>;
     rootDisplay?: RootDisplay
-    rootProtection?: RootProtection;
 }
 
 export const useTree = <T = unknown>({
@@ -19,10 +18,6 @@ export const useTree = <T = unknown>({
         mode: 'single-root',
         showRoot: true,
     },
-    rootProtection = {
-        allowRootDeletion: false,
-        allowRootMove: false,
-    }
 }: Props<T>) => {
 
     const normalizedRootDisplay: RootDisplay = {
