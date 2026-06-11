@@ -1,6 +1,6 @@
 {
   "name": "@livetree/react",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A powerful and synchronized tree component for React with real‑time collaboration support",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -20,6 +20,7 @@
   "scripts": {
     "build": "tsup && shx mkdir -p dist/styles && shx cp src/styles/style.css dist/styles/",
     "dev": "tsup --watch",
+    "prepack": "npm run build",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {

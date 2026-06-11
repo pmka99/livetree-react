@@ -1,7 +1,6 @@
 # 🌳 LiveTree – React Tree Component
 
-![Bundle Size](https://img.shields.io/bundlephobia/minzip/@livetree/react)
-![Gzip Size](https://img.shields.io/badge/gzip-5.2_kB-brightgreen)
+![Bundle Size + Gzip Size](https://img.shields.io/badge/Bundle_Size_%2B_Gzip_Size-5.2_kB-brightgreen)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-success)
 
 A feature-rich, highly customizable tree component for React with built-in support for collaborative editing, drag & drop, context menus, action buttons, virtual scrolling, RTL, theming, and real‑time synchronization with backend APIs.
@@ -95,8 +94,8 @@ function App() {
 |renderNode	      |(props: RenderNodeProps<T>) => React.ReactNode |	undefined |	Custom node renderer |
 |renderNodeIcon	  |(node: NodeRow<T>) => React.ReactNode |	undefined |	Custom icon renderer |
 |showLines	      |boolean |	true |	Show tree guide lines |
-|constLabelWidth  |	number |	undefined |	Fixed label width (px) |
-|expandStrategy	  |'click on item' / 'click on expanedIcon' |	'click on expanedIcon' |	How to expand/collapse |
+|constLabelWidth  |	number |	120 |	Fixed label width (px) |
+|expandStrategy	  |'click on item' / 'click on expanedIcon' |	'click on item' |	How to expand/collapse |
 |showExpandIcons  |	boolean |	true |	Show expand/collapse | buttons |
 |icons	          |{ expand?: { expanedIcon, unExpandedIcon }, nodesIcon?: ReactNode } |	undefined |	Custom expand icons |
 |dragDrop	      |{ enabled: boolean; onDrag?, onDrop? } |	{ enabled: false } |	Drag & drop configuration |
